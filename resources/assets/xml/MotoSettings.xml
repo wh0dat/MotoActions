@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings provider="content://com.motorola.actions.settings.provider">
+    <version code="1">
+        <container id="actions" key="actionscontainer">
+            <intent action="com.motorola.actions.ACTION_SETTINGS"
+                    category="android.intent.category.DEFAULT"/>
+        </container>
+    </version>
+
+    <version code="2">
+        <container id="display" key="displaycontainer">
+            <!-- Settings list at: {@link FeatureKey}
+                ATTENTIVE_DISPLAY(5, Constants.STAY_ON_DEFAULT_VALUE),
+                NIGHT_DISPLAY(9, Constants.NIGHT_DISPLAY_DEFAULT_SETTING_VALUE),
+             -->
+
+            <setting key="attentive_display">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="5"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="5"/>
+                </intent>
+            </setting>
+
+            <setting key="night_display">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="9"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="9"/>
+                </intent>
+            </setting>
+
+        </container>
+
+        <container id="actions" key="actionscontainer">
+
+            <!-- Settings list at: {@link FeatureKey}
+                QUICK_CAPTURE(1, Constants.QC_DEFAULT_SETTING_VALUE),
+                APPROACH(2, Constants.APPROACH_DEFAULT_SETTING_VALUE),
+                FLASH_ON_CHOP(3, Constants.FOC_DEFAULT_SETTING_VALUE),
+                RISE_TO_EAR(4, Constants.LIFT_DEFAULT_SETTING_VALUE),
+                MICROSCREEN(6, Constants.SWIPE_TO_MICRO_SCREEN_DEFAULT_SETTING_VALUE),
+                PICKUP_TO_STOP_RINGING(7, Constants.LIFT_DEFAULT_SETTING_VALUE),
+                FLIP_TO_DND(8, Constants.FTM_DEFAULT_SETTING_VALUE),
+                ONE_NAV(10, Constants.ONE_NAV_DEFAULT_SETTING_VALUE),
+                QUICK_SCREENSHOT(11, Constants.QUICK_SCREENSHOT_DEFAULT_SETTING_VALUE);
+                ENHANCED_SCREENSHOT(12, Constants.ENHANCED_SCREENSHOT_DEFAULT_SETTING_VALUE);
+                MEDIA_CONTROL(13, Constants.MEDIA_CONTROL_DEFAULT_SETTING_VALUE);
+                FPS_SLIDE_HOME(14, Constants.FPS_SLIDE_HOME_DEFAULT_SETTING_VALUE);
+                FPS_SLIDE_APP(15, Constants.FPS_SLIDE_APP_DEFAULT_SETTING_VALUE);
+                LIFT_TO_UNLOCK(16, Constants.LIFT_TO_UNLOCK_DEFAULT_SETTING_VALUE);
+             -->
+
+            <setting key="lift_to_unlock">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="16"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="16"/>
+                </intent>
+            </setting>
+
+            <setting key="fps_slide_app">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="15"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="15"/>
+                </intent>
+            </setting>
+
+            <setting key="fps_slide_home">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="14"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="14"/>
+                </intent>
+            </setting>
+
+            <setting key="media_control">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="13"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="13"/>
+                </intent>
+            </setting>
+
+            <setting key="enhanced_screenshot">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="12"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="12"/>
+                </intent>
+            </setting>
+
+            <setting key="quick_screenshot">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="11"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="11"/>
+                </intent>
+            </setting>
+
+            <setting key="one_nav">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="10"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="10"/>
+                </intent>
+            </setting>
+
+            <setting key="flash_on_chop">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="3"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="3"/>
+                </intent>
+            </setting>
+
+            <setting key="quick_capture">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="1"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="1"/>
+                </intent>
+            </setting>
+
+            <setting key="microscreen">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="6"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="6"/>
+                </intent>
+            </setting>
+
+            <setting key="lift_to_silence">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="7"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="7"/>
+                </intent>
+            </setting>
+
+            <setting key="flip_to_mute">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="8"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="8"/>
+                </intent>
+            </setting>
+
+            <setting key="approach">
+                <intent action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="2"/>
+                </intent>
+                <intent link_action="com.motorola.actions.ui.settings.START"
+                        category="android.intent.category.DEFAULT">
+                    <extra name="settings" type="int" value="2"/>
+                </intent>
+            </setting>
+
+        </container>
+    </version>
+</settings>
+

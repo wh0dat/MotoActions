@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item>
+        <shape android:shape="ring" android:useLevel="false" android:innerRadius="@dimen/tab_indicator_inner_radius" android:thickness="@dimen/tab_indicator_thickness">
+            <solid android:color="@color/tab_layout_step_selected"/>
+        </shape>
+    </item>
+</layer-list>

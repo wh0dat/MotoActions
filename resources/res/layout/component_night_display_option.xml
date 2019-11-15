@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView android:id="@+id/nightDisplayIcon" android:layout_width="wrap_content" android:layout_height="@dimen/night_display_option_icon_size" android:layout_alignTop="@+id/night_display_item_description" android:layout_marginStart="@dimen/margin_start_night_display_icon"/>
+    <RelativeLayout android:gravity="center" android:id="@+id/night_display_item_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/night_display_option_icon_size" android:layout_marginStart="@dimen/margin_start_night_display_option">
+        <TextView android:id="@+id/textPeriod" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <include android:id="@+id/textCustom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/textPeriod" android:layout_alignStart="@+id/spinner_modes" layout="@layout/component_custom_time"/>
+    </RelativeLayout>
+</RelativeLayout>

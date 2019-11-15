@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <include android:id="@+id/setting_id" layout="@layout/component_switch_header"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:layout_above="@+id/bottom_bar" android:layout_below="@+id/setting_id">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.motorola.actions.p013ui.settings.DropDownLayout android:id="@+id/dropdown_settings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true"/>
+            <View android:background="@color/separator_gray_stroke" android:layout_width="match_parent" android:layout_height="1px" android:layout_below="@+id/dropdown_settings"/>
+            <include android:id="@+id/componentStart" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_night_display_option" android:layout_below="@+id/dropdown_settings" layout="@layout/component_night_display_option"/>
+            <include android:id="@+id/componentEnd" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_night_display_option" android:layout_below="@+id/componentStart" layout="@layout/component_night_display_option"/>
+            <include android:id="@+id/componentIntensityFilter" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_night_display_option" android:layout_below="@+id/componentEnd" layout="@layout/component_night_display_intensity"/>
+            <include android:id="@+id/videoContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/componentIntensityFilter" layout="@layout/component_video_detail"/>
+            <TextView android:gravity="bottom|center_vertical|center_horizontal|center" android:layout_gravity="center" android:id="@+id/fallbackInfo" android:paddingTop="@dimen/settings_anim_top_margin" android:paddingBottom="@dimen/settings_anim_top_margin" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/componentIntensityFilter" android:layout_alignParentBottom="true" android:textIsSelectable="false" android:paddingStart="@dimen/settings_fallback_lateral_padding" android:paddingEnd="@dimen/settings_fallback_lateral_padding" style="@style/SettingsText"/>
+            <View android:id="@+id/dropdown_shadow" android:background="@android:color/black" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/dropdown_settings" android:layout_alignParentBottom="true" android:alpha="@dimen/shadow_alpha"/>
+        </RelativeLayout>
+    </ScrollView>
+    <include android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/settings_tutorial_button_layout_height" android:layout_alignParentBottom="true" layout="@layout/component_tutorial_button"/>
+</RelativeLayout>

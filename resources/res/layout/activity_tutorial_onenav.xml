@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center" android:id="@+id/tutorial_onenav_root" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.motorola.actions.p013ui.tutorial.onenav.OneNavViewPager android:id="@+id/onenav_view_pager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>

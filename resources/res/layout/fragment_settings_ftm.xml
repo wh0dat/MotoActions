@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <include android:id="@+id/setting_id" layout="@layout/component_switch_header"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:layout_above="@+id/bottom_bar" android:layout_below="@+id/setting_id">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <include android:id="@+id/custom_dropdown" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/component_dnd_dropdown"/>
+            <include android:orientation="horizontal" android:id="@+id/vibration_setting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/custom_dropdown" layout="@layout/component_toggle_group"/>
+            <include android:id="@+id/video_container" android:layout_width="match_parent" android:layout_height="@dimen/settings_ftm_video_height" android:layout_below="@+id/vibration_setting" layout="@layout/component_video_detail"/>
+            <View android:id="@+id/dropdown_shadow" android:background="@android:color/black" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/custom_dropdown" android:layout_alignBottom="@+id/video_container" android:alpha="@dimen/shadow_alpha"/>
+        </RelativeLayout>
+    </ScrollView>
+    <include android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/settings_tutorial_button_layout_height" android:layout_alignParentBottom="true" layout="@layout/component_tutorial_button"/>
+</RelativeLayout>

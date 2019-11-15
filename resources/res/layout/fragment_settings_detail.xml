@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <include android:id="@+id/setting_id" layout="@layout/component_switch_header"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:layout_above="@+id/bottom_bar" android:layout_below="@+id/setting_id">
+        <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/component_video_detail"/>
+    </ScrollView>
+    <include android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/settings_tutorial_button_layout_height" android:layout_alignParentBottom="true" layout="@layout/component_tutorial_button"/>
+</RelativeLayout>

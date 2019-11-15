@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:paddingTop="16dp" android:paddingBottom="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView android:gravity="center" android:id="@+id/icon" android:background="@android:color/transparent" android:layout_width="72dp" android:layout_height="wrap_content" android:layout_centerInParent="true" android:contentDescription="@null" android:layout_alignParentStart="true"/>
+    <TextView android:gravity="start" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" android:paddingEnd="16dp" android:layout_toEndOf="@+id/icon" style="@style/CardTitleText"/>
+    <TextView android:gravity="start" android:id="@+id/detail_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/title" android:textIsSelectable="false" android:paddingEnd="16dp" android:layout_toEndOf="@+id/icon" style="@style/CardDetailText"/>
+</RelativeLayout>

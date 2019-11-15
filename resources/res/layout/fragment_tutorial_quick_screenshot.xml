@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <TextView android:id="@+id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" style="@style/TitleText"/>
+    <ScrollView android:id="@+id/scroller_body" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:layout_above="@+id/bottom_bar" android:layout_below="@+id/text_title">
+        <RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/text_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:layout_alignParentTop="true" android:textIsSelectable="false" style="@style/InfoText"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/text_info">
+                <ImageView android:id="@+id/image_middle_finger" android:layout_width="@dimen/size_image_finger" android:layout_height="@dimen/size_image_finger" android:layout_margin="@dimen/margin_quick_screenshot_finger" android:src="@drawable/finger_area" android:layout_centerInParent="true"/>
+                <ImageView android:id="@+id/image_left_finger" android:layout_width="@dimen/size_image_finger" android:layout_height="@dimen/size_image_finger" android:layout_marginTop="@dimen/margin_quick_screenshot_finger_top" android:src="@drawable/finger_area" android:layout_alignTop="@+id/image_middle_finger" android:layout_toStartOf="@+id/image_middle_finger"/>
+                <ImageView android:id="@+id/image_right_finger" android:layout_width="@dimen/size_image_finger" android:layout_height="@dimen/size_image_finger" android:layout_marginTop="@dimen/margin_quick_screenshot_finger_top" android:src="@drawable/finger_area" android:layout_alignTop="@+id/image_middle_finger" android:layout_toEndOf="@+id/image_middle_finger"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/tutorial_button_height" android:layout_alignParentBottom="true">
+        <include android:id="@+id/layout_cmd_two_buttons" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/bar_action_button_two"/>
+        <include android:id="@+id/layout_cmd_single_button" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/bar_action_button_single"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="281050271" android:versionName="05.027.1.1-P" package="com.motorola.actions">
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="28"/>
+    <uses-feature android:name="com.motorola.actions"/>
+    <uses-permission android:name="com.motorola.permission.ACCESS_CHECKIN"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="com.motorola.slpc.permission.SENSORHUB"/>
+    <uses-permission android:name="com.motorola.audiomonitor.permission.LOCAL"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.motorola.permission.systemui.LONG_SCREENSHOT"/>
+    <uses-permission android:name="com.motorola.permission.BIND_EXPERIENCE"/>
+    <permission android:label="@string/ad_permission_start_microscreen_label" android:name="com.motorola.permission.START_MICROSCREEN" android:protectionLevel="signatureOrSystem" android:description="@string/ad_permission_start_microscreen_description"/>
+    <permission android:label="@string/ad_permission_microscreen_receiver_label" android:name="com.motorola.permission.MICROSCREEN_RECEIVER" android:protectionLevel="signatureOrSystem" android:description="@string/ad_permission_microscreen_receiver_description"/>
+    <uses-permission android:name="com.motorola.permission.SINGLEHAND_CONTROL"/>
+    <permission android:label="@string/ad_permission_read_camera_state_label" android:name="com.motorola.actions.attentivedisplay.permission.READ_CAMERA_STATE" android:protectionLevel="signatureOrSystem" android:description="@string/ad_permission_read_camera_state_description"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.motorola.permission.EXTRA_SCREEN_STATUS"/>
+    <uses-permission android:name="com.motorola.permission.EXTRA_SCREEN_CONTROL"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
+    <uses-permission android:name="com.motorola.mod.permission.MOD_ACCESS_INFO"/>
+    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
+    <uses-permission android:name="com.motorola.slpc.permission.BIND_SERVICE"/>
+    <uses-permission android:name="com.motorola.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.motorola.moto.permission.MOTO_STATE"/>
+    <uses-permission android:name="com.motorola.permission.SET_ZEN_MODE_CONFIG"/>
+    <uses-permission android:name="com.motorola.permission.GET_ZEN_MODE_CONFIG"/>
+    <uses-permission android:name="com.motorola.permission.MANAGE_NOTIFICATIONS"/>
+    <uses-permission android:name="com.motorola.slpc.permission.RECEIVER"/>
+    <uses-permission android:name="com.motorola.audiomonitor.permission.AOV_TTS_PLAY"/>
+    <uses-permission android:name="com.motorola.ttm.TTM_INTERACTION"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <permission android:label="@string/perm_fdn_label" android:name="com.motorola.permission.motoactions.FDN" android:protectionLevel="signatureOrSystem" android:description="@string/perm_fdn_desc"/>
+    <application android:theme="@style/MotoAppTheme" android:label="@string/app_name" android:icon="@drawable/icon_actions_moto" android:name="com.motorola.actions.ActionsApplication" android:allowClearUserData="false" android:allowBackup="false" android:supportsRtl="true" android:resizeableActivity="false" android:directBootAware="true">
+        <uses-library android:name="com.motorola.motosignature"/>
+        <provider android:name="android.support.p001v4.content.FileProvider" android:exported="false" android:authorities="com.motorola.actions" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <provider android:name="com.motorola.actions.settings.provider.ActionsSettingsProvider" android:readPermission="com.motorola.actions.provider.permission.READ_MODES" android:writePermission="com.motorola.actions.provider.permission.WRITE_MODES" android:exported="true" android:authorities="com.motorola.actions.settings.provider"/>
+        <receiver android:name="com.motorola.actions.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.motorola.actions.ForegroundNotificationService"/>
+        <service android:name="com.motorola.actions.approach.p005ir.IRService"/>
+        <service android:name="com.motorola.actions.approach.p006us.USService"/>
+        <activity android:theme="@style/Theme.MotoAppNoBackground" android:name="com.motorola.actions.p013ui.settings.SettingsActivity" android:exported="true" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.motorola.actions.ACTION_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Settings.PermissionStyle" android:name="com.motorola.actions.foc.gesture.view.FlashOnChopPermissionsActivity" android:exported="false" android:launchMode="singleTask"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.p014ad.TourDemoActivity" android:exported="false" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <service android:name="com.motorola.actions.attentivedisplay.AttentiveDisplayService"/>
+        <service android:name="com.motorola.actions.attentivedisplay.AttentiveDisplayInitService"/>
+        <receiver android:name="com.motorola.actions.checkin.DailyBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.motorola.actions.alarm.checkin"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.motorola.actions.mediacontrol.MediaControlService" android:exported="false"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.mediacontrol.MediaControlTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.motorola.actions.foc.gesture.service.FlashOnChopService" android:exported="false"/>
+        <service android:name="com.motorola.actions.foc.config.FlashOnChopInitService" android:exported="false"/>
+        <service android:name="com.motorola.actions.microScreen.MicroScreenService" android:permission="com.motorola.permission.START_MICROSCREEN">
+            <intent-filter>
+                <action android:name="com.motorola.actions.microScreen.MICROSCREEN_INIT_SERVICE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.motorola.actions.microScreen.MicroScreenReceiver" android:permission="com.motorola.permission.MICROSCREEN_RECEIVER">
+            <intent-filter>
+                <action android:name="com.motorola.actions.microScreen.MICROSCREEN_EXIT_RECEIVER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.motorola.actions.lts.LiftToSilenceService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.motorola.actions.lts.LTS_INIT_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.motorola.actions.ftm.FlipToMuteService" android:exported="false"/>
+        <service android:name="com.motorola.actions.nightdisplay.NightDisplayService" android:exported="false"/>
+        <service android:name="com.motorola.actions.nightdisplay.NightDisplaySetupService" android:exported="false"/>
+        <service android:name="com.motorola.actions.sleepPattern.SleepPatternService" android:exported="false"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.TutorialActivity" android:enabled="false" android:taskAffinity="com.motorola.moto"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.p015qc.QuickDrawTutorialActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.motorola.actions.p010qc.QuickCaptureService" android:exported="false"/>
+        <service android:name="com.motorola.actions.quickscreenshot.service.QuickScreenshotService" android:exported="false"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.foc.FlashOnChopTutorialActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.lts.LiftToSilenceTutorialActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.microscreen.MicroScreenTutorialActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.nightdisplay.NightDisplayDefaultTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.nightdisplay.NightDisplaySleepPatternTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.onenav.OneNavTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.onenav.soft.SoftOneNavTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.quickScreenshot.QuickScreenshotTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.enhancedscreenshot.EnhancedScreenshotTutorialActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.MotoAppNoBackground" android:name="com.motorola.actions.p013ui.settings.SettingsDetailActivity" android:taskAffinity="com.motorola.moto" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.motorola.actions.ui.settings.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.MotoAppNoBackground" android:name="com.motorola.actions.p013ui.settings.NightDisplaySettingsActivity" android:taskAffinity="com.motorola.moto">
+            <intent-filter>
+                <action android:name="android.settings.NIGHT_DISPLAY_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.motorola.actions.MotoActionsAppStoreLauncher" android:finishOnTaskLaunch="true" android:clearTaskOnLaunch="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|uiMode|screenSize" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.INFO"/>
+                <action android:name="com.motorola.extensions.settings.DYNAMIC_DISPLAY_SETTINGS_PREFERENCES"/>
+            </intent-filter>
+            <meta-data android:name="com.motorola.extensions.preference" android:resource="@xml/display_settings_remove_options"/>
+        </activity>
+        <receiver android:name="com.motorola.actions.lts.TTMActivatedStateChangeReceiver" android:permission="com.motorola.moto.permission.MOTO_STATE" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.motorola.moto.intent.action.ACTION_CHANGED"/>
+                <data android:mimeType="action/com.motorola.talktome.actions.driving"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.motorola.actions.ftm.receiver.SlpcSystemBootReceiver" android:permission="com.motorola.slpc.permission.RECEIVER">
+            <intent-filter>
+                <action android:name="com.motorola.slpc.SlpcSystem.BOOTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.settings.ScreenLockSettings" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.onenav.OneNavWelcomeActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.onenav.soft.SoftOneNavWelcomeActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.onenav.soft.SoftOneNavOptinActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Tutorial" android:name="com.motorola.actions.p013ui.tutorial.quickScreenshot.welcome.QuickScreenshotWelcomeActivity" android:taskAffinity="com.motorola.moto" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <service android:name="com.motorola.actions.enhancedscreenshot.EnhancedScreenshotService" android:exported="false"/>
+        <service android:name="com.motorola.actions.ltu.LiftToUnlockService" android:exported="false"/>
+        <service android:name="com.motorola.actions.UserSwitchService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.motorola.actions.motoservice.MotoService" android:permission="com.motorola.permission.BIND_EXPERIENCE" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.motorola.intent.action.EXPERIENCE"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

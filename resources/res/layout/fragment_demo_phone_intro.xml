@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:id="@+id/text_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:textIsSelectable="false" style="@style/TitleText"/>
+        <TextView android:id="@+id/text_info" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginBottom="20dp" android:textIsSelectable="false" style="@style/InfoText"/>
+        <TextView android:id="@+id/text_info2" android:layout_width="wrap_content" android:layout_height="match_parent" android:textIsSelectable="false" style="@style/InfoText"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+        <ImageButton android:gravity="center_horizontal" android:id="@+id/button_countdown" android:background="@null" android:layout_width="116dp" android:layout_height="116dp" android:src="@drawable/moto_ic_vc_cancel_blue" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:contentDescription="@null"/>
+        <View android:gravity="center_horizontal" android:id="@+id/spinner_view" android:paddingTop="2dp" android:layout_width="116dp" android:layout_height="116dp" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</LinearLayout>

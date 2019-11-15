@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.p001v4.view.ViewPager android:id="@+id/video_detail_viewpager" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/tab_steps"/>
+    <android.support.design.widget.TabLayout android:id="@+id/tab_steps" android:layout_width="match_parent" android:layout_height="@dimen/tab_layout_height" android:layout_marginBottom="@dimen/tab_layout_margin_bottom" android:layout_alignParentBottom="true" app:tabBackground="@drawable/tab_selector" app:tabGravity="1" app:tabIndicatorHeight="@dimen/tab_layout_indicator_height" app:tabPaddingEnd="@dimen/tab_layout_padding_start" app:tabPaddingStart="@dimen/tab_layout_padding_start"/>
+</RelativeLayout>

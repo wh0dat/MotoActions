@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/layout_buttons" android:layout_width="match_parent" android:layout_height="@dimen/tutorial_button_height" android:paddingStart="@dimen/bottom_bar_button_padding" android:paddingEnd="@dimen/bottom_bar_button_padding">
+    <Button android:textSize="@dimen/font_size_bottom_bar_2018" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@+id/singleButton" android:textIsSelectable="false" style="@style/ButtonTextRound"/>
+</LinearLayout>

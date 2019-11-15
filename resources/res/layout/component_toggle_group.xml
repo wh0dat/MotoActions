@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/dropdown_settings">
+    <LinearLayout android:gravity="start" android:orientation="vertical" android:id="@+id/selected_setting" android:paddingTop="@dimen/toggle_settings_vertical_padding" android:paddingBottom="@dimen/toggle_settings_vertical_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/toggle_settings_horizontal_padding" android:paddingEnd="@dimen/toggle_settings_horizontal_padding" android:layout_toStartOf="@+id/toggle_element">
+        <TextView android:id="@+id/toggle_text" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SelectedTitleText"/>
+        <TextView android:id="@+id/toggle_description" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/SubtitleText"/>
+    </LinearLayout>
+    <Switch android:id="@+id/toggle_element" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:paddingEnd="@dimen/settings_switch_margin" android:layout_alignParentEnd="true"/>
+</RelativeLayout>

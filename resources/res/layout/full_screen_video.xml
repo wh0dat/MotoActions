@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextureView android:id="@+id/video" android:layout_width="match_parent" android:layout_height="@dimen/tutorial_anim_height" android:layout_margin="24dp"/>
+</RelativeLayout>

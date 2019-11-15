@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <TextView android:id="@+id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" style="@style/TitleText"/>
+    <ScrollView android:id="@+id/scroller_body" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:layout_above="@+id/bottom_bar" android:layout_below="@+id/text_title">
+        <RelativeLayout android:orientation="vertical" android:paddingBottom="@dimen/tutorial_relative_layout_padding_bottom" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:id="@+id/text_info" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:textIsSelectable="false" style="@style/InfoText"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/tip_list" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/text_info" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+            <TextView android:id="@+id/text_info2" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/tip_list" android:textIsSelectable="false" style="@style/InfoText"/>
+            <TextureView android:id="@+id/video" android:layout_below="@+id/text_info2" android:layout_alignParentBottom="true" style="@style/LearnMoreTextureView"/>
+            <ImageView android:id="@+id/tutorial_image" android:visibility="gone" android:layout_height="@dimen/night_display_tutorial_image_height" android:scaleType="fitCenter" android:layout_below="@+id/text_info2" android:layout_alignParentBottom="true" style="@style/LearnMoreImageView"/>
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/settings_tutorial_button_layout_height" android:layout_alignParentBottom="true">
+        <include android:id="@+id/layout_cmd_two_buttons" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerHorizontal="true" layout="@layout/bar_action_button_two"/>
+        <include android:id="@+id/layout_cmd_single_button" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerHorizontal="true" layout="@layout/bar_action_button_single"/>
+    </RelativeLayout>
+</RelativeLayout>

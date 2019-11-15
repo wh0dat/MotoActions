@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:id="@+id/horizontal_buttons" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:id="@+id/frame_left_button" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toStartOf="@+id/tab_steps" android:layout_alignParentStart="true">
+        <TextView android:layout_gravity="center_horizontal" android:id="@+id/leftBtn" android:textIsSelectable="false" style="@style/NoButtonText"/>
+    </FrameLayout>
+    <android.support.design.widget.TabLayout android:id="@+id/tab_steps" android:layout_width="wrap_content" android:layout_height="@dimen/tab_layout_height" android:layout_marginTop="13dp" android:layout_centerHorizontal="true" app:tabBackground="@drawable/tab_selector" app:tabGravity="1" app:tabIndicatorHeight="@dimen/tab_layout_indicator_height" app:tabPaddingEnd="@dimen/tab_layout_padding_start" app:tabPaddingStart="@dimen/tab_layout_padding_start"/>
+    <FrameLayout android:id="@+id/frame_right_button" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toEndOf="@+id/tab_steps" android:layout_alignParentEnd="true">
+        <Button android:layout_gravity="center_horizontal" android:id="@+id/rightBtn" android:textIsSelectable="false" android:layout_marginStart="@dimen/settings_tutorial_button_margin_center_two_buttons" android:layout_marginEnd="@dimen/settings_tutorial_button_margin_two_buttons" style="@style/ButtonTextRound"/>
+    </FrameLayout>
+</RelativeLayout>

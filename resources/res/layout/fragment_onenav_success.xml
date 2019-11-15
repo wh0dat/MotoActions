@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@color/parasailing_500" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textColor="@android:color/white" android:id="@+id/text_feedback_success" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:textIsSelectable="false" style="@style/TitleText"/>
+    <RelativeLayout android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/settings_tutorial_button_layout_height" android:layout_alignParentBottom="true">
+        <include android:id="@+id/layout_cmd_two_buttons" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/component_bottom_bar_border_aligned_two_buttons"/>
+    </RelativeLayout>
+</RelativeLayout>

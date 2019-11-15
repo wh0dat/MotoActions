@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/settings_video_min_height">
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@+id/detail_text" android:paddingTop="@dimen/settings_anim_top_margin" android:paddingBottom="@dimen/settings_anim_top_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:textIsSelectable="false" android:paddingStart="@dimen/settings_detail_padding" android:paddingEnd="@dimen/settings_detail_padding" style="@style/SettingsText"/>
+    <TextureView android:layout_gravity="center_horizontal" android:id="@+id/video" android:layout_width="match_parent" android:layout_height="@dimen/tutorial_anim_height" android:layout_margin="24dp" android:layout_above="@+id/detail_text"/>
+    <ImageView android:layout_gravity="center_horizontal" android:id="@+id/image" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="56dp" android:layout_above="@+id/detail_text"/>
+</RelativeLayout>

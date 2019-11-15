@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:id="@+id/license_menu_entry" android:title="@string/licenses_title"/>
+    <item android:id="@+id/privacy_menu_entry" android:title="@string/privacy_title"/>
+    <item android:id="@+id/debug_settings_menu_entry" android:visible="false" android:title="@string/debug_menu"/>
+</menu>

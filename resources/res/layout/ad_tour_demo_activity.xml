@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:keepScreenOn="true">
+    <TextView android:id="@+id/tv_ad_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ad_tour_demo_title" style="@style/TitleText"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:fillViewport="true" android:layout_weight="1">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/tv_ad_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="36dp" android:text="@string/ad_tour_demo_instructions" style="@style/InfoText"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <SurfaceView android:layout_width="1px" android:layout_height="1px"/>
+                <TextureView android:id="@+id/video" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="center"/>
+                <ImageView android:id="@+id/tutorial_img" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ad_no_face_detected" android:scaleType="center"/>
+                <TextView android:textSize="16dp" android:gravity="center" android:id="@+id/result_no_face_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ad_tour_no_face_overlay" android:lines="2" android:layout_centerInParent="true" android:layout_marginHorizontal="100dp" style="@style/ImageOverlayText"/>
+            </RelativeLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/ad_tour_demo_help" android:textAlignment="center" style="@style/InfoText"/>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="@dimen/tutorial_button_height">
+        <include android:id="@+id/layout_cmd_two_buttons" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/bar_action_button_two"/>
+        <include android:id="@+id/layout_cmd_single_button" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/bar_action_button_single"/>
+    </RelativeLayout>
+</LinearLayout>

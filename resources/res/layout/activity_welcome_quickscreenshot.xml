@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/welcome_root" android:tag="layout/activity_welcome_quickscreenshot_0" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="@dimen/activity_welcome_surfaceview_width_height" android:layout_height="@dimen/activity_welcome_surfaceview_width_height"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/bottom_bar">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextureView android:id="@+id/welcome_video" android:layout_marginTop="@dimen/activity_welcome_video_texture_view_margin_top" style="@style/TutorialVideo"/>
+            <TextView android:textSize="@dimen/activity_welcome_title_text_size" android:textColor="@color/moto_text_title_color" android:id="@+id/welcome_text_title" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/welcome_video" android:textIsSelectable="false" android:layout_marginStart="@dimen/activity_welcome_text_margin" android:layout_marginEnd="@dimen/activity_welcome_text_margin" style="@style/TitleText"/>
+            <TextView android:textColor="@color/moto_text_title_color" android:id="@+id/welcome_text_description" android:tag="binding_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_welcome_text_margin_bottom" android:layout_below="@+id/welcome_text_title" android:textIsSelectable="false" android:layout_marginStart="@dimen/activity_welcome_text_margin" android:layout_marginEnd="@dimen/activity_welcome_text_margin" style="@style/InfoText"/>
+        </RelativeLayout>
+    </ScrollView>
+    <include android:id="@+id/bottom_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/component_bottom_bar_border_aligned_two_buttons"/>
+</RelativeLayout>

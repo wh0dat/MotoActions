@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/setting_id" android:background="@color/settings_background" android:layout_width="match_parent" android:layout_height="@dimen/settings_card_height">
+    <Switch android:id="@+id/enabled_box" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/settings_switch_margin" android:layout_alignParentEnd="true"/>
+    <TextView android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:textIsSelectable="false" android:layout_marginStart="@dimen/settings_card_margin" android:layout_toStartOf="@+id/enabled_box" android:layout_alignParentStart="true" style="@style/SettingsText"/>
+</RelativeLayout>

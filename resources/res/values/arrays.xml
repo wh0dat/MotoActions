@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="camera_qd_tutorial_tip_list">
+        <item>@string/camera_qd_timeout_info1</item>
+        <item>@string/camera_qd_timeout_info2</item>
+    </array>
+    <array name="foc_tutorial_tip_list">
+        <item>@string/foc_motion_description1</item>
+        <item>@string/foc_motion_description2</item>
+    </array>
+    <array name="fps_slide_app_directions">
+        <item>@string/fps_slide_app_scroll_direction_normal</item>
+        <item>@string/fps_slide_app_scroll_direction_reversed</item>
+    </array>
+    <array name="onenav_tutorial_error_messages">
+        <item>@string/onenav_tutorial_error_message_1</item>
+        <item>@string/onenav_tutorial_error_message_2</item>
+        <item>@string/onenav_tutorial_error_message_3</item>
+    </array>
+    <array name="sh_tutorial_tip_list">
+        <item>@string/sh_motion_description1</item>
+        <item>@string/sh_motion_description2</item>
+        <item>@string/sh_motion_description3</item>
+    </array>
+    <array name="sh_tutorial_tip_list_include_fingerprint">
+        <item>@string/sh_motion_description1</item>
+        <item>@string/sh_motion_description2</item>
+        <item>@string/sh_motion_description3</item>
+        <item>@string/sh_motion_description4</item>
+    </array>
+</resources>

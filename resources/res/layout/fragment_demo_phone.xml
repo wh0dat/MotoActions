@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/layout_phone" android:background="@color/phone_background_black" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/phone_blue_primary" android:paddingTop="20dp" android:paddingBottom="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="24dp" android:paddingEnd="24dp">
+        <TextView android:textSize="22sp" android:textColor="@color/phone_text_info_white" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/wave_to_silence_phone_demo_info" android:singleLine="true" android:fontFamily="sans-serif"/>
+        <TextView android:textSize="45sp" android:textColor="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/app_name" android:singleLine="true" android:fontFamily="sans-serif-light"/>
+        <TextView android:textSize="18sp" android:textColor="@color/phone_text_title_white" android:id="@+id/phone_action_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/wave_to_silence_phone_demo_title" android:singleLine="true" android:fontFamily="sans-serif"/>
+        <ImageView android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:src="@drawable/ic_call_iconography" android:scaleType="center"/>
+    </LinearLayout>
+    <ImageView android:gravity="center" android:layout_width="match_parent" android:layout_height="0dp" android:src="@drawable/ic_call" android:scaleType="center" android:layout_weight="1"/>
+</LinearLayout>

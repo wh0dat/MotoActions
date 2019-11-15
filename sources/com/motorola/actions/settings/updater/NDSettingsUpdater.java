@@ -1,0 +1,68 @@
+package com.motorola.actions.settings.updater;
+
+import android.content.Intent;
+import com.google.android.gms.common.util.CrashUtils.ErrorDialogData;
+import com.motorola.actions.ActionsApplication;
+import com.motorola.actions.FeatureKey;
+import com.motorola.actions.checkin.CommonCheckinAttributes;
+import com.motorola.actions.discovery.DiscoveryManager;
+import com.motorola.actions.nightdisplay.FeatureManager;
+import com.motorola.actions.nightdisplay.common.Persistence;
+import com.motorola.actions.p013ui.settings.SettingsActivity;
+import com.motorola.actions.p013ui.settings.SettingsDetailActivity;
+import com.motorola.actions.p013ui.tutorial.nightdisplay.NightDisplaySleepPatternTutorialActivity;
+import com.motorola.actions.settings.provider.ActionsSettingsProvider;
+import com.motorola.actions.settings.provider.p012v2.display.ContainerProviderItemNightDisplay;
+
+public class NDSettingsUpdater extends SettingsUpdater {
+    private static final String ND_ENABLE_SOURCE = "actions_nd_enable_source";
+
+    private static class SingletonHolder {
+        /* access modifiers changed from: private */
+        public static final SettingsUpdater INSTANCE = new NDSettingsUpdater();
+
+        private SingletonHolder() {
+        }
+    }
+
+    /* access modifiers changed from: protected */
+    public String getEnableSourceKey() {
+        return ND_ENABLE_SOURCE;
+    }
+
+    public static SettingsUpdater getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+
+    public int updateFromMoto(boolean z) {
+        if (NightDisplaySleepPatternTutorialActivity.shouldOpenTutorial()) {
+            Intent intent = new Intent();
+            intent.setAction(SettingsActivity.START_SETTING_ACTION);
+            intent.setFlags(ErrorDialogData.BINDER_CRASH);
+            intent.putExtra(SettingsDetailActivity.KEY_SETTINGS, FeatureKey.NIGHT_DISPLAY.ordinal());
+            ActionsApplication.getAppContext().startActivity(intent);
+            ActionsSettingsProvider.notifyChange(ContainerProviderItemNightDisplay.TABLE_NAME);
+            return 0;
+        }
+        toggleStatus(z, true, CommonCheckinAttributes.KEY_DAILY_ENABLE_SOURCE_TYPE_MOTO_APP);
+        return 1;
+    }
+
+    public void toggleStatus(boolean z, boolean z2, String str) {
+        ignoreDiscoveryStatus(FeatureKey.NIGHT_DISPLAY, z);
+        setEnabledSource(z, str);
+        Persistence.saveFeatureEnable(z);
+        ActionsSettingsProvider.hideCard(ContainerProviderItemNightDisplay.PRIORITY_KEY);
+        ActionsSettingsProvider.notifyChange(ContainerProviderItemNightDisplay.TABLE_NAME);
+        if (z) {
+            FeatureManager.start(ActionsApplication.getAppContext());
+            DiscoveryManager.getInstance().cancelFDN(FeatureKey.NIGHT_DISPLAY);
+            return;
+        }
+        FeatureManager.stop(ActionsApplication.getAppContext());
+    }
+
+    public boolean getDefaultSettingsValue() {
+        return FeatureKey.NIGHT_DISPLAY.getEnableDefaultState();
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <SurfaceView android:visibility="gone" android:layout_width="0px" android:layout_height="0px"/>
+    <FrameLayout android:id="@+id/frame_cancel_button" android:layout_width="wrap_content" android:layout_height="@dimen/tutorial_button_height" android:layout_marginEnd="@dimen/margin_cancel_button" android:layout_alignParentEnd="true" style="@style/FlatButtonNeutral">
+        <TextView android:textColor="@color/cancel_color" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@android:string/cancel" android:textIsSelectable="false" android:layout_marginStart="@dimen/onenav_cancel_button_margin" android:layout_marginEnd="@dimen/onenav_cancel_button_margin" style="@style/ButtonTextFlatBlack"/>
+    </FrameLayout>
+    <TextView android:id="@+id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_below="@+id/frame_cancel_button" android:textIsSelectable="false" style="@style/TitleText"/>
+    <ScrollView android:id="@+id/scroller_body" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true" android:layout_above="@+id/text_feedback" android:layout_below="@+id/text_title">
+        <RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/text_info" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:lines="5" android:textIsSelectable="false" style="@style/InfoText"/>
+            <FrameLayout android:id="@+id/video_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/text_info">
+                <TextureView android:id="@+id/video" style="@style/OneNavTextureView"/>
+                <FrameLayout android:id="@+id/video_placeholder" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </FrameLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <TextView android:textStyle="bold" android:id="@+id/text_feedback" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_feedback_onenav" android:layout_marginBottom="@dimen/margin_feedback_onenav" android:text="@string/onenav_tutorial_try_it" android:layout_alignParentBottom="true" android:layout_alignWithParentIfMissing="true" android:textIsSelectable="false" style="@style/InfoText"/>
+</RelativeLayout>

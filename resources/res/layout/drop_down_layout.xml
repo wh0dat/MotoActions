@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <RelativeLayout android:orientation="horizontal" android:id="@+id/selected_setting_container" android:background="?android:attr/selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@+id/selected_setting" android:paddingTop="@dimen/dropdown_item_vertical_padding" android:paddingBottom="@dimen/dropdown_item_vertical_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dropdown_item_horizontal_padding" android:paddingEnd="@dimen/dropdown_item_horizontal_padding" android:layout_toStartOf="@+id/dropdown_settings_arrow">
+            <TextView android:gravity="start" android:id="@+id/selected_setting_title" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SelectedTitleText"/>
+            <TextView android:id="@+id/selected_setting_description" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/SubtitleText"/>
+        </LinearLayout>
+        <ImageView android:id="@+id/dropdown_settings_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/dropdown_arrow_enabled" android:layout_centerVertical="true" android:paddingEnd="@dimen/dropdown_item_horizontal_padding" android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/dropdown_settings_menu" android:background="@android:color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/selected_setting_container"/>
+</RelativeLayout>
